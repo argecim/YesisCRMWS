@@ -1,0 +1,1560 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png" />
+    <meta name="author" content="SindevoThemes" />
+    <title>Yesis Crm Giriş Ekranı</title>
+    <meta name="description" content="Yesis Crm Giriş Ekranı" />
+    <meta name="keywords" content="Yesis Crm Giriş Ekranı" />
+    <link type="text/css" rel="stylesheet" href="~/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="~/colors/metro/metro.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/idangerous.swiper.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/swipebox.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/plyr.css" />
+    <link href="~/Scripts/bootstrap-toastr/toastr.css" rel="stylesheet" />
+    <link href="~/Scripts/bootstrap-toastr/toastr.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css' />
+    <script type="text/javascript" src="~/js/jquery-1.10.1.min.js"></script>
+    <script src="~/js/jquery.validate.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+    @RenderBody()
+    <div class="swiper-container swiper-parent" style="background-image:url(../../colors/metro/images/bg-metro.jpg)">
+        <div class="swiper-slide">
+
+            <!--Login page-->
+            <div class="swiper-slide " id="login">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <center>
+                                <div class="slide-inner">
+                                    <div style="width:80%;margin-top:100px;">
+                                        <img src="~/logo@2x.png" />
+                                        <br /><br />
+                                        <form id="CommentForm" method="post" action="">
+                                            <div class="form-group">
+                                                <label for="txtLoginName" style="text-align:left;color:white;">Kullanıcı Adı</label>
+                                                <input type="text" class="form-control" id="txtLoginName" placeholder="Kullanıcı Adı" style="height:50px" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="txtPassword" style="text-align:left;color:white;">Şifre</label>
+                                                <input type="password" class="form-control" id="txtPassword" placeholder="Şifre" style="height:50px" />
+                                            </div>
+                                            <br />
+                                            <input type="button" class="btn btn-lg btn-primary" value="Giriş" id="btn_login" style="width:100%;height:100px" />
+
+                                            <label id="loader" style="display:none;"><img src="~/images/loader.gif" alt="Loading..." id="LoadingGraphic" /></label>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Menu page-->
+            <div class="swiper-slide " id="menu">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="logo">
+                                <center>
+                                    <img src="~/logo@2x.png" />
+                                </center>
+                            </div>
+                            <div class="menu">
+                                <ul>
+                                    <li class="blue">
+                                        <a href="#" onclick="gotoActivityL();">
+                                            <img src="~/images/icons/blog.png" alt="" title="" />
+                                            <span>AKTİVİTELER</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="green">
+                                        <a href="#" onclick="gotoSifreBul();">
+                                            <img src="~/images/icons/about.png" alt="" title="" />
+                                            <span>BARKOD SORGULAMA</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="red">
+                                        <a href="#" onclick="gotoServisTalep();">
+                                            <img src="~/images/icons/tools.png" alt="" title="" />
+                                            <span>SERVİS TALEBİ</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="orange">
+                                        <a href="#" onclick="gotoEnvanter();">
+                                            <img src="~/images/icons/docs.png" alt="" title="" />
+                                            <span>ENVANTER</span>
+                                        </a>
+                                    </li>
+                                    <li class="bluegreen">
+                                        <a href="#" onclick="gotologin();">
+                                            <img src="~/images/icons/home.png" alt="" title="" />
+                                            <span>ÇIKIŞ</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Page 1 content AKTİVİTELER-->
+            <div class="swiper-slide " id="activityList">
+                <div class="swiper-container swiper-nested">
+                    <div class="sliderbg blue">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-4">
+                                    <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="#" onclick="gotoMenu();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-inner">
+                        <div class="pages_container">
+                            <div class="posts_archive_page">
+                                <div>
+                                    <center><h2 class="page_title">İş Listesi</h2></center>
+                                </div>
+
+                                <ul id="ul_list" class="posts" style="width:100%;height:750px; overflow-y: scroll;"></ul>
+                            </div>
+                            <!--End of posts archive page-->
+                        </div>
+                        <!--End of page container-->
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+
+            <!--Page 1 content AKTİVİTELER-->
+            <div class="swiper-slide " id="activity">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="sliderbg blue">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoActivityL();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-inner">
+                                <div class="pages_container">
+                                    <div>
+                                        <center><h2 class="page_title">Aktivite Detayı</h2></center>
+                                    </div>
+
+                                    <div id="tab1">
+                                        <table>
+                                            <tr>
+                                                <td style="width:50px;"><h4 class="page_title" style="color:orange;font-weight:bold;">No </h4></td>
+                                                <td style="width:5px"> <h4 style="text-align:left;color:white;"> : </h4></td>
+                                                <td><h4 id="txt_id" style="text-align:left;color:white;"></h4></td>
+                                                <td style="width:100px;margin-left:30px;text-align:right;"><h4 class="page_title" style="color:orange;font-weight:bold;">Personel </h4></td>
+                                                <td style="width:5px"> <h4 style="text-align:left;color:white;"> : </h4> </td>
+                                                <td> <h4 id="txt_Personel" style="text-align:left;color:white;"></h4> </td>
+                                                <td style="width:130px;margin-left:30px;text-align:right;"><h4 class="page_title" style="color:orange;font-weight:bold;">Aktivite Durum </h4></td>
+                                                <td style="width:5px"> <h4 style="text-align:left;color:white;"> : </h4> </td>
+                                                <td>  <h4 id="txt_Aktivite" style="text-align:left;color:white;"> </h4> </td>
+                                            </tr>
+                                            <tr> <td><h4 class="page_title" style="color:orange;font-weight:bold;">Müşteri </h4></td> <td style="width:5px"> <h4 style="text-align:left;color:white;"> : </h4> </td><td colspan="8"> <h4 id="txt_Customer" style="text-align:left;color:white;"></h4> </td> </tr>
+                                            <tr> <td><h4 class="page_title" style="color:orange;font-weight:bold;">Açıklama </h4></td> <td style="width:5px"> <h4 style="text-align:left;color:white;"> : </h4> </td><td colspan="8">  <h4 id="txt_desc" style="text-align:left;color:white;"> </h4> </td> </tr>
+                                        </table>
+
+                                        <textarea id="txtComment" class="form-control" rows="8" cols="70" style="width:100%;"> </textarea>
+                                    </div>
+                                    <br />
+                                    <input type="button" class="btn btn-lg btn-primary" value="TAMAMLANDI" id="btn_completed" style="width:100%;height:75px" /><br /><br />
+                                    <input type="button" class="btn btn-lg btn-warning" value="BEKLEME" id="btn_wait" style="width:100%;height:75px" /><br /><br />
+                                    <input type="button" class="btn btn-lg btn-danger" value="İPTAL" id="btn_cancel" style="width:100%;height:75px" /><br /><br />
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div id="txt_aktiviteTipiId"> </div>
+                                <!--End of page container-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!--Page 2 content BARKOD SORGULAMA-->
+            <div class="swiper-slide " id="password">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="sliderbg blue">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-inner">
+
+                                <div class="pages_container">
+                                    <div class="col-md-12">
+                                        <center><h2 class="page_title">Barkod Sorgulama</h2></center>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="txtLoginName" style="text-align:left;color:white;">Barkod giriniz</label>
+                                            <input type="text" class="form-control" id="txtBarkod" placeholder="Barkod giriniz" style="height:50px" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="col-md-12">
+                                        <input type="button" class="btn btn-lg btn-primary" value="ARA" id="btnEnvanterAra" style="width:100%;height:50px" /><br /><br />
+                                        <input type="button" class="btn btn-lg btn-primary" value="BARKOD OKU" id="btn_barkod" style="width:100%;height:50px" />
+                                    </div>
+                                    <br />
+                                    <div id="tblAccPoint" style="display:'none'">
+                                        <table cellpadding="5" cellspacing="5" width="100%;">
+                                            <tr>
+                                                <td colspan="2">
+
+                                                    <center><h2 class="page_title">Envanter Access Point</h2></center>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Müşteri&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_Musteri">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Marka Modeli&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_MarkaModeli">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    AccessPoint SSID&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_AccessPointSSID">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    AccessPoint Şifresi&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_AccessPointSifresi">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    AccessPoint Local IP&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_AccessPointLocalIP">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    AccessPoint Arayüz Id&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_AccessPointArayuzId">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Açıklama&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <div id="tblServer" style="display:'none'">
+                                        <table cellpadding="5" cellspacing="5" width="100%">
+                                            <tr>
+                                                <td colspan="2">
+
+                                                    <center><h2 class="page_title">Envanter Serverler</h2></center>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Müşteri Adı&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_Musteri_">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Domain Adı&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_MarkaModeli_">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Domain Server Id&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_AccessPointSSID_">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Domain Server Şifresi&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_AccessPointSifresi_">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Server IP&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_AccessPointLocalIP_">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Domain Server Ip&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_AccessPointArayuzId_">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Server Şifresi&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_ServerSifresi_">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Firma IP Port&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_FirmaIPPort_">.</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+
+                                    <div id="tblBilgisayarlar" style="display:'none'">
+                                        <table cellpadding="5" cellspacing="5" width="100%">
+                                            <tr>
+                                                <td colspan="2">
+
+                                                    <center><h2 class="page_title">Envanter Bilgisayarlar</h2></center>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Müşteri Adı&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_MusteriBilgisayarlar">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Kullanıcı Adı&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_KullaniciAdiBilgisayarlar">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Ürünün Türü&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_UrununTuruBilgisayarlar">.</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:medium;text-align:right;width:220px;font-weight:bold;color:red;background-color:azure;height:30px">
+                                                    Mail Adresi&nbsp;:&nbsp;
+                                                </td>
+                                                <td style="font-size:medium;text-align:left;color:black;background-color:azure;">
+                                                    <p id="lbl_MailAdresiBilgisayarlar">.</p>
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--End of page container-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Page 3 content SERVİS TALEBİ-->
+            <div class="swiper-slide " id="service">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="sliderbg blue">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-inner">
+                                <div class="pages_container">
+                                    <div class="col-md-12">
+                                        <center><h2 class="page_title">Servis Talebi</h2></center>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="txtFirmaAdi" style="text-align:left;color:white;">Firma İsmi</label>
+                                            <input type="text" class="form-control" id="txtFirmaAdi" placeholder="Firma İsmi" style="height:50px" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="txtIlgiliKisi" style="text-align:left;color:white;">İlgili Kişi</label>
+                                            <input type="text" class="form-control" id="txtIlgiliKisi" placeholder="İlgili Kişi" style="height:50px" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="txtServisComment" style="text-align:left;color:white;">Talep</label>
+                                            <textarea id="txtServisComment" class="form-control" rows="8" cols="70" style="width:100%;"> </textarea>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="col-md-12">
+                                        <input type="button" class="btn btn-lg btn-primary" style="width:100%;height:100px" value="SERVİS TALEBİ GÖNDER" id="btn_servis" />
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--End of page container-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!--Page 4 content ENVANTER-->
+            <div class="swiper-slide " id="envantermain">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="sliderbg blue">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-inner">
+                                <div class="pages_container">
+                                    <div class="menu">
+                                        <ul>
+                                            <li class="green">
+                                                <a href="#" onclick="gotoEnvanterBilgisayar();">
+                                                    <img src="~/images/icons/about.png" alt="" title="" />
+                                                    <span>BİLGİSAYAR</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="red">
+                                                <a href="#" onclick="gotoMenuEnvanterYazici();">
+                                                    <img src="~/images/icons/tools.png" alt="" title="" />
+                                                    <span>YAZICI</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="blue">
+                                                <a href="#" onclick="gotoMenuEnvanterUPS();">
+                                                    <img src="~/images/icons/blog.png" alt="" title="" />
+                                                    <span>UPS</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="orange">
+                                                <a href="#" onclick="gotoMenuEnvanterNetworkUrunleri();">
+                                                    <img src="~/images/icons/docs.png" alt="" title="" />
+                                                    <span>NETWORK ÜRÜNLERİ</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="purple">
+                                                <a href="#" onclick="gotoMenuEnvanterKamera();">
+                                                    <img src="~/images/icons/videos.png" alt="" title="" />
+                                                    <span>KAMERA</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="yellow">
+                                                <a href="#" onclick="gotoMenuEnvanterSunucu();">
+                                                    <img src="~/images/icons/code.png" alt="" title="" />
+                                                    <span>SUNUCU</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--End of page container-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Page 5 content BİLGİSAYAR-->
+            <div class="swiper-slide " id="EnvanterBilgisayar">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="sliderbg blue">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenuEnvanter();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-inner">
+                                <div class="pages_container">
+                                    <center><h2 class="page_title">Bilgisayar Envanteri</h2></center>
+                                    <div class="col-md-12" style="width:100%;height:750px; overflow-y: scroll;">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtXCompanies" style="text-align:left;color:white;">Firma</label>
+                                                <select id="txtXCompanies" style="width:100%" class="selectpicker show-tick form-control"></select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEBarkod" style="text-align:left;color:white;">Barkod</label>
+                                                <input type="text" class="form-control" id="txtEBarkod" placeholder="Barkod" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtECinsi" style="text-align:left;color:white;">Cinsi</label>
+                                                <input type="text" class="form-control" id="txtECinsi" placeholder="Cinsi" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEMarka" style="text-align:left;color:white;">Marka</label>
+                                                <input type="text" class="form-control" id="txtEMarka" placeholder="Marka" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEKullanici" style="text-align:left;color:white;">Kullanıcı Adı</label>
+                                                <input type="text" class="form-control" id="txtEKullanici" placeholder="Kullanıcı Adı" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEParola" style="text-align:left;color:white;">Parola</label>
+                                                <input type="text" class="form-control" id="txtEParola" placeholder="Parola" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtERam" style="text-align:left;color:white;">Ram</label>
+                                                <select id="txtERam" style="width:100%" class="selectpicker show-tick form-control">
+                                                    <option value="1GB">1GB</option>
+                                                    <option value="2GB">2GB</option>
+                                                    <option value="3GB">3GB</option>
+                                                    <option value="4GB">4GB</option>
+                                                    <option value="6GB">6GB</option>
+                                                    <option value="8GB">8GB</option>
+                                                    <option value="16GB">16GB</option>
+                                                    <option value="36GB">36GB</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtECpu" style="text-align:left;color:white;">CPU</label>
+                                                <select id="txtECpu" style="width:100%" class="selectpicker show-tick form-control">
+                                                    <option value="Pentium">Pentium</option>
+                                                    <option value="i3">i3</option>
+                                                    <option value="i5">i5</option>
+                                                    <option value="i7">i7</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEHdd" style="text-align:left;color:white;">Hdd</label>
+                                                <input type="text" class="form-control" id="txtEHdd" placeholder="Hdd" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEisletimSistemi" style="text-align:left;color:white;">İşletim Sistemi</label>
+                                                <select id="txtEisletimSistemi" style="width:100%" class="selectpicker show-tick form-control">
+                                                    <option value="WinXP">winXP</option>
+                                                    <option value="Win7">Win7</option>
+                                                    <option value="Win10">Win10</option>
+                                                    <option value="WinServer">WinServer</option>
+                                                    <option value="MacOs">MACOS</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEOffice" style="text-align:left;color:white;">Office Sürümü</label>
+                                                <input type="text" class="form-control" id="txtEOffice" placeholder="Office Sürümü" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEIS" style="text-align:left;color:white;">İ.S. Key</label>
+                                                <input type="text" class="form-control" id="txtEIS" placeholder="İ.S. Key" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEOS" style="text-align:left;color:white;">O.S. Key</label>
+                                                <input type="text" class="form-control" id="txtEOS" placeholder="O.S. Key" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEAntivirus" style="text-align:left;color:white;">AntiVirüs</label>
+                                                <input type="text" class="form-control" id="txtEAntivirus" placeholder="AntiVirüs" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="txtEPaket" style="text-align:left;color:white;">Paket Program</label>
+                                                <input type="text" class="form-control" id="txtEPaket" placeholder="Paket Program" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="button" class="btn btn-lg btn-primary" value="Kaydet" id="btn_EnvBilgisayarKaydet" style="width:100%;" />
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Page 6 content YAZICI-->
+            <div class="swiper-slide " id="EnvanterYazici">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="sliderbg blue">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenuEnvanter();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-inner">
+                                <div class="pages_container">
+                                    <center><h2 class="page_title">YAZICI</h2></center>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Page 7 content UPS-->
+            <div class="swiper-slide " id="EnvanterUPS">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="sliderbg blue">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenuEnvanter();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-inner">
+                                <div class="pages_container">
+                                    <center><h2 class="page_title">UPS</h2></center>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Page 8 content NETWORK ÜRÜNLERİ-->
+            <div class="swiper-slide " id="EnvanterNetworkUrunleri">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="sliderbg blue">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenuEnvanter();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-inner">
+                                <div class="pages_container">
+                                    <center><h2 class="page_title">NETWORK ÜRÜNLERİ</h2></center>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Page 9 content KAMERA-->
+            <div class="swiper-slide " id="EnvanterKamera">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="sliderbg blue">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenuEnvanter();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-inner">
+                                <div class="pages_container">
+                                    <center><h2 class="page_title">KAMERA</h2></center>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Page 10 content SUNUCU-->
+            <div class="swiper-slide " id="EnvanterSunucu">
+                <div class="swiper-container swiper-nested">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide">
+                            <div class="sliderbg blue">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" onclick="gotoMenuEnvanter();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-inner">
+                                <div class="pages_container">
+                                    <center><h2 class="page_title">SUNUCU</h2></center>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="swiper-container swiper-nested">
+                <div class="swiper-slide">
+                    <div class="swiper-slide">
+                        <div class="sliderbg blue">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <a href="#" onclick="gotoMenu();"><img class="gohome" src="~/images/icons/home.png" alt="" title="" /></a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <center> <img src="~/logo@2x.png" style="height:60px;" /></center>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#" onclick="gotoMenuEnvanter();"><img class="gomenu" src="~/images/icons/back.png" alt="" title="" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-inner">
+                            <div class="pages_container">
+                                <div class="clearfix"></div>
+                            </div>
+                            <!--End of page container-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--End of pages-->
+
+    </div>
+    <div class="pagination"></div>
+
+    <script type="text/javascript" src="~/js/jquery.swipebox.js"></script>
+    <script type="text/javascript" src="~/js/idangerous.swiper-2.1.min.js"></script>
+    <script type="text/javascript" src="~/js/idangerous.swiper.scrollbar-2.1.js"></script>
+    <script type="text/javascript" src="~/js/jquery.tabify.js"></script>
+    <script type="text/javascript" src="~/js/plyr.js"></script>
+    <script type="text/javascript" src="~/js/code.js"></script>
+    <script type="text/javascript" src="~/js/load.js"></script>
+    <!--Twitter Feed-->
+    <script type="text/javascript" src="~/js/twitter/jquery.tweet.js" charset="utf-8"></script>
+    <script src="~/Scripts/bootstrap-toastr/toastr.js"></script>
+    <script src="~/Scripts/bootstrap-toastr/toastr.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/global.js"></script>
+    <script type="text/javascript" src="~/cordova.js"></script>
+
+    <!-- En son derlenmiş ve minimize edilmiş CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- En son derlenmiş ve minimize edilmiş JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+
+
+        var $ = jQuery.noConflict();
+
+        var uname = localStorage.getItem("USERNAME");
+        var upass = localStorage.getItem("PASSWORD");
+
+        $('#txtLoginName').val(uname);
+        $('#txtPassword').val(upass);
+
+
+        $("#btn_login").on("click", function () {
+
+            $.ajax({
+                url: "http://localhost:4804/api/login?loginName=" + $('#txtLoginName').val() + "&loginPass=" + $('#txtPassword').val(),
+                dataType: 'json',
+                success: function (a) {
+                    if (a != null) {
+
+                        localStorage.setItem("ID", a.Id);
+                        localStorage.setItem("USERNAME", $('#txtLoginName').val());
+                        localStorage.setItem("PASSWORD", $('#txtPassword').val());
+                        window.location.href = "#";
+                        //swiperParent.swipeTo(1);
+                        window.location.href = "#menu";
+                        ShowNotificiation.Success("Login Girişi", "Başarıyla Giriş Yaptınız");
+                    }
+                    else {
+                        ShowNotificiation.Warning("Uyarı", "Kullanıcı adı veya şifrenizi yanlış girdiniz.");
+                    }
+                },
+                error: function (textStatus) {
+                    ShowNotificiation.Error("Hata", "Kullanıcı adı veya şifrenizi yanlış girdiniz.");
+                }
+            });
+        });
+
+
+        $("#btn_completed").on("click", function () {
+
+
+            $.ajax({
+                url: "http://localhost:4804/api/aktivite/tamamlandi?id=" + $('#txt_id').text() + "&durumId=12&aciklama=" + $('#txtComment').val() + "&aktiviteTipiId=" + $('#txt_aktiviteTipiId').text() + "&ss=ss",
+                type: 'post',
+                success: function () {
+
+                    //swiperParent.swipeTo(2);
+                    gotoActivityL();
+                    //gotoAll();
+                    ShowNotificiation.Success("Sonuç", "Akitivite Başarıyla Tamamlandı.");
+                },
+                error: function (textStatus) {
+                    ShowNotificiation.Error("Hata", textStatus);
+                }
+            });
+        });
+
+        $("#btn_wait").on("click", function () {
+
+            $.ajax({
+                url: "http://localhost:4804/api/aktivite/beklemede?id=" + $('#txt_id').text() + "&durumId=12&aciklama=" + $('#txtComment').val() + "&aktiviteTipiId=" + $('#txt_aktiviteTipiId').text() + "&xx=xx",
+                type: 'post',
+                success: function () {
+
+                    //swiperParent.swipeTo(2);
+                    gotoActivityL();
+                    //gotoAll();
+                    ShowNotificiation.Warning("Sonuç", "Akitivite Beklemeye Alındı.");
+                },
+                error: function (textStatus) {
+                    alert("http://localhost:4804/api/aktivite/put?id=" + $('#txt_id').text() + "&durumId=iptal&aciklama=" + $('#txtcomment').val());
+                    alert(textStatus);
+                }
+            });
+        });
+
+        $("#btn_cancel").on("click", function () {
+
+            $.ajax({
+                url: "http://localhost:4804/api/aktivite/iptal?id=" + $('#txt_id').text() + "&durumId=12&aciklama=" + $('#txtComment').val() + "&aktiviteTipiId=" + $('#txt_aktiviteTipiId').text() + "&iptal=1",
+                type: 'post',
+                success: function () {
+
+                    //swiperParent.swipeTo(2);
+                    gotoActivityL();
+                    //gotoAll();
+                    ShowNotificiation.Error("Sonuç", "Akitivite İptal Edildi.");
+                },
+                error: function (textStatus) {
+                    alert(
+                        "http://localhost:4804/api/aktivite/iptal?id=" + $('#txt_id').text() + "&durumId=12&aciklama=" + $('#txtcomment').val() + "&aktiviteTipiId=" + $('#txt_aktiviteTipiId').text() + "&iptal=1"
+                    );
+
+                }
+            });
+        });
+
+        $("#btnEnvanterAra").on("click", function () {
+            var e = document.getElementById('tblAccPoint');
+            var e2 = document.getElementById('tblServer');
+            var e3 = document.getElementById('tblBilgisayarlar');
+
+            $.ajax({
+                url: "http://localhost:4804/api/envanter/" + $('#txtBarkod').val(),
+                type: 'get',
+                success: function (a) {
+                    if (a != null) {
+                        if (a.Kontrol == "accessPoint") {
+                            e.style.display = 'block';
+                            e2.style.display = 'none';
+                            e3.style.display = 'none';
+
+                            $('#lbl_Musteri').html(a.Musteri);
+                            $('#lbl_MarkaModeli').html(a.MarkaModeli);
+                            $('#lbl_AccessPointSSID').html(a.AccessPointSSID);
+                            $('#lbl_AccessPointSifresi').html(a.AccessPointSifresi);
+                            $('#lbl_AccessPointLocalIP').html(a.AccessPointLocalIP);
+                            $('#lbl_AccessPointArayuzId').html(a.AccessPointArayuzId);
+                            $('#lbl_ServerSifresi').html(a.ServerSifresi);
+                            $('#lbl_FirmaIPPort').html(a.FirmaIPPort);
+
+
+                        }
+                        else if (a.Kontrol == "server") {
+                            e.style.display = 'none';
+                            e2.style.display = 'block';
+                            e3.style.display = 'none';
+
+                            $('#lbl_Musteri_').html(a.Musteri);
+                            $('#lbl_MarkaModeli_').html(a.MarkaModeli);
+                            $('#lbl_AccessPointSSID_').html(a.AccessPointSSID);
+                            $('#lbl_AccessPointSifresi_').html(a.AccessPointSifresi);
+                            $('#lbl_AccessPointLocalIP_').html(a.AccessPointLocalIP);
+                            $('#lbl_AccessPointArayuzId_').html(a.AccessPointArayuzId);
+                            $('#lbl_ServerSifresi_').html(a.ServerSifresi);
+                            $('#lbl_FirmaIPPort_').html(a.FirmaIPPort);
+
+
+                        } else if (a.Kontrol == "Bilgisayarlar") {
+                            e.style.display = 'none';
+                            e2.style.display = 'none';
+                            e3.style.display = 'block';
+
+                            $('#lbl_MusteriBilgisayarlar').html(a.Musteri);
+                            $('#lbl_KullaniciAdiBilgisayarlar').html(a.KullaniciAdi);
+                            $('#lbl_UrununTuruBilgisayarlar').html(a.UrununTuru);
+                            $('#lbl_MailAdresiBilgisayarlar').html(a.MailAdresi);
+                        }
+                        window.location.href = "#password";
+                    }
+                    else {
+                        ShowNotificiation.Warning("Sonuç", "Barkod Bulunamadı");
+                        e.style.display = 'none';
+                        e2.style.display = 'none';
+                        e3.style.display = 'none';
+                    }
+                },
+                error: function (textStatus) {
+                    alert(" hata oldu lütfen sonra tekrar deneyiniz");
+
+                }
+            });
+        });
+
+
+        $("#btn_servis").on("click", function () {
+
+            $.ajax({
+                url: "http://localhost:4804/api/servis?FirmaAdi=" + $('#txtFirmaAdi').val() + "&IlgiliKisi=" + $('#txtIlgiliKisi').val() + "&ServisComment=" + $('#txtServisComment').text(),
+                type: 'get',
+                success: function () {
+                    //swiperParent.swipeTo(1);
+                    $('#txtServisComment').text("");
+                    $('#txtFirmaAdi').val("");
+                    $('#txtIlgiliKisi').val("");
+                    window.location.href = "#menu";
+                    ShowNotificiation.Success("Sonuç", "Servis Talebi Başarıyla Gönderildi.");
+                },
+                error: function (textStatus) {
+                    ShowNotificiation.Error("Hata", textStatus);
+                }
+            });
+        });
+
+
+
+
+        $("#btn_EnvBilgisayarKaydet").on("click", function () {
+
+            html =
+                '?txtXCompanies=' + $('#txtXCompanies').val() +
+                '&txtEBarkod=' + $('#txtEBarkod').text() +
+                '&txtECinsi=' + $('#txtECinsi').text() +
+                '&txtEMarka=' + $('#txtEMarka').text() +
+                '&txtEKullanici=' + $('#txtEKullanici').text() +
+                '&txtEParola=' + $('#txtEParola').text() +
+                '&txtERam=' + $('#txtERam').val() +
+                '&txtECpu=' + $('#txtECpu').val() +
+                '&txtEHdd=' + $('#txtEHdd').val() +
+                '&txtEisletimSistemi=' + $('#txtEisletimSistemi').val() +
+                '&txtEOffice=' + $('#txtEOffice').text() +
+                '&txtEIS=' + $('#txtEIS').text() +
+                '&txtEOS=' + $('#txtEOS').text() +
+                '&txtEAntivirus=' + $('#txtEAntivirus').text() +
+                '&txtEPaket=' + $('#txtEPaket').text();
+            $.ajax({
+                url: "http://localhost:4804/api/EnvanterBilgisayar/get" + html,
+                type: 'get',
+                success: function () {
+
+                    //swiperParent.swipeTo(2);
+                    gotoAll();
+                },
+                error: function (textStatus) {
+                    alert(textStatus);
+                }
+            });
+
+
+        });
+
+
+        $("#btn_barkod").on("click", function () {
+            cordova.plugins.barcodeScanner.scan(
+                function (result) {
+                    if (!result.cancelled) {
+                        $('#txtBarkod').val(result.text);
+                        var e = document.getElementById('tblAccPoint');
+                        var e2 = document.getElementById('tblServer');
+                        var e3 = document.getElementById('tblBilgisayarlar');
+
+                        $.ajax({
+                            url: "http://localhost:4804/api/envanter/" + $('#txtBarkod').val(),
+                            type: 'get',
+                            success: function (a) {
+                                if (a != null) {
+                                    if (a.Kontrol == "accessPoint") {
+                                        e.style.display = 'block';
+                                        e2.style.display = 'none';
+                                        e3.style.display = 'none';
+
+                                        $('#lbl_Musteri').html(a.Musteri);
+                                        $('#lbl_MarkaModeli').html(a.MarkaModeli);
+                                        $('#lbl_AccessPointSSID').html(a.AccessPointSSID);
+                                        $('#lbl_AccessPointSifresi').html(a.AccessPointSifresi);
+                                        $('#lbl_AccessPointLocalIP').html(a.AccessPointLocalIP);
+                                        $('#lbl_AccessPointArayuzId').html(a.AccessPointArayuzId);
+                                        $('#lbl_ServerSifresi').html(a.ServerSifresi);
+                                        $('#lbl_FirmaIPPort').html(a.FirmaIPPort);
+
+
+                                    }
+                                    else if (a.Kontrol == "server") {
+                                        e.style.display = 'none';
+                                        e2.style.display = 'block';
+                                        e3.style.display = 'none';
+
+                                        $('#lbl_Musteri_').html(a.Musteri);
+                                        $('#lbl_MarkaModeli_').html(a.MarkaModeli);
+                                        $('#lbl_AccessPointSSID_').html(a.AccessPointSSID);
+                                        $('#lbl_AccessPointSifresi_').html(a.AccessPointSifresi);
+                                        $('#lbl_AccessPointLocalIP_').html(a.AccessPointLocalIP);
+                                        $('#lbl_AccessPointArayuzId_').html(a.AccessPointArayuzId);
+                                        $('#lbl_ServerSifresi_').html(a.ServerSifresi);
+                                        $('#lbl_FirmaIPPort_').html(a.FirmaIPPort);
+
+
+                                    } else if (a.Kontrol == "Bilgisayarlar") {
+                                        e.style.display = 'none';
+                                        e2.style.display = 'none';
+                                        e3.style.display = 'block';
+
+                                        $('#lbl_MusteriBilgisayarlar').html(a.Musteri);
+                                        $('#lbl_KullaniciAdiBilgisayarlar').html(a.KullaniciAdi);
+                                        $('#lbl_UrununTuruBilgisayarlar').html(a.UrununTuru);
+                                        $('#lbl_MailAdresiBilgisayarlar').html(a.MailAdresi);
+                                    }
+                                    window.location.href = "#password";
+                                }
+                                else {
+                                    ShowNotificiation.Warning("Sonuç", "Barkod Bulunamadı");
+                                    e.style.display = 'none';
+                                    e2.style.display = 'none';
+                                    e3.style.display = 'none';
+                                }
+                            },
+                            error: function (textStatus) {
+                                alert(" hata oldu lütfen sonra tekrar deneyiniz");
+                            }
+                        });
+
+
+                        /*
+                        if(result.format == "QR_CODE")
+                        {
+                            navigator.notification.prompt("Please enter name of data",  function(input){
+                                var name = input.input1;
+                                var value = result.text;
+                                var data = localStorage.getItem("LocalData");
+                                console.log(data);
+                                data = JSON.parse(data);
+                                data[data.length] = [name, value];
+                                localStorage.setItem("LocalData", JSON.stringify(data));
+                                alert("Done");
+                            });
+                        }*/
+                    }
+                },
+                function (error) {
+                    alert("Scanning failed: " + error);
+                }
+            );
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
+        function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            if (e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+    </script>
+    <script type="text/javascript">
+
+        function ajaxContact(theForm) {
+            alert('ajaxcontrol');
+            var $ = jQuery;
+            $('#loader').fadeIn();
+            var formData = $(theForm).serialize(),
+                note = $('#Note');
+            $.ajax({
+                type: "POST",
+                url: "contact-send.php",
+                data: formData,
+                success: function (response) {
+                    if (note.height()) {
+                        note.fadeIn('fast', function () { $(this).hide(); });
+                    } else {
+                        note.hide();
+                    }
+                    $('#LoadingGraphic').fadeOut('fast', function () {
+                        //$(this).remove();
+                        if (response === 'success') {
+
+                            $('#formtitle').hide();
+
+                        }
+                        // Message Sent? Show the 'Thank You' message and hide the form
+                        result = '';
+                        c = '';
+                        if (response === 'success') {
+                            result = 'Your message has been sent. Thank you!';
+                            c = 'success';
+                        } else {
+                            result = response;
+                            c = 'error';
+                        }
+                        note.removeClass('success').removeClass('error').text('');
+                        var i = setInterval(function () {
+                            if (!note.is(':visible')) {
+                                note.html(result).addClass(c).slideDown('fast');
+                                clearInterval(i);
+                            }
+                        }, 40);
+                    }); // end loading image fadeOut
+                }
+            });
+            return false;
+        }
+    </script>
+    <script type='text/javascript'>
+        function gotodetail(val) {
+            $("textarea#txtComment").val('');
+            $("textarea#txtComment").val('');
+            $("#txtComment").text('');
+            $("#txtComment").val('');
+
+            //swiperParent.swipeTo(2);
+            window.location.href = "#activity";
+
+            $.ajax({
+                url: "http://localhost:4804/api/aktivite/" + val,
+                dataType: 'json',
+                success: function (a) {
+                    $('#txt_id').html(a.Id);
+                    $('#txt_desc').html(a.Aciklama);
+                    $('#txt_Customer').html(a.Musteri);
+                    $('#txt_Personel').html(a.PersonelAdi);
+                    $('#txt_Aktivite').html(a.AktiviteDurumu);
+                    $('#txt_aktiviteTipiId').html(a.AktiviteTipiId);
+
+                }
+            });
+        }
+
+        function gotologin() {
+            window.location.href = "#login";
+        }
+        function gotoActivityL() {
+
+            var pref1 = localStorage.getItem("ID");
+            $.ajax({
+                url: "http://localhost:4804/api/aktivite?personelId=" + pref1 + "&id=0",
+                dataType: 'json',
+                success: function (a) {
+                    // Remove any list - so the new one can be added.
+                    //swiperParent.swipeTo(3);
+                    window.location.href = "#activityList";
+
+                    $('#ul_list ul').remove();
+                    // Need to add UL on AJAX call or formatting of userlist is not displayed
+                    $('#ul_list').append('<ul data-role="listview" style="width:84%;"></ul>');
+                    listItems = $('#ul_list').find('ul');
+                    /*
+                         html = '<li class="post">';
+                                                 html +=  '<a href="#" ></a>';
+                                                  html +=  '<div class="post_right_reveal">';
+                                                  html +=  '<a href="#">'+ a[key].Musteri +'<br>'+a[key].Aciklama
+                                                  +'<br>'+a[key].AktiviteDurumu +'<a>';
+                                                  html +=  '</div>';
+
+
+                                                 html +=  '<div class="post_left">';
+                                                 html +=  '    <span >'+a[key].Id+'</span> <br>';
+                                                 html +=  '    <span >'+a[key].PersonelAdi+'</span>';
+                                                 html +=  '</div>';
+                                             html +=  '</li>';
+                     */
+
+                    $.each(a, function (key) {
+                        html = '<a href="#" onclick="gotodetail(' + a[key].Id + ')" >';
+                        html += '<li class="post" id="id_' + key + '">';
+
+                        html += '<div class="post_right_reveal" style="width:90%;">';
+                        html += a[key].Musteri + '<br>' + a[key].Aciklama
+                            ;
+                        html += '</div>';
+
+
+                        html += '<div class="post_left" style="text-align: center;background-color: ' + a[key].Renk + '">';
+                        html += '    <span style="text-align: center;">' + a[key].PersonelAdi + '</span> <br>';
+                        html += '    <span style="text-align: center;">' + a[key].AktiviteDurumu + '</span>';
+                        html += '</div>';
+                        html += '</li>' + '</a>';
+
+
+                        listItems.append(html);
+                    });
+                    //alert(html);
+                    // Need to refresh list after AJAX call
+
+                    //$('#ul_list ul').listview();
+                    // Once all complete change the page
+                    //$.mobile.changePage("#results", "slide");
+                }
+            });
+
+
+        }
+
+        function gotoEnvanterBilgisayar() {
+            $.ajax({
+                url: "http://localhost:4804/api/company/",
+                dataType: 'json',
+                success: function (a) {
+
+                    $('#txtXCompanies select').remove();
+                    //$('#txtXCompanies').append('<ul data-role="listview"></ul>');
+                    //listItems = $('#txtXCompanies').find('ul');
+
+                    $.each(a, function (key) {
+
+
+                        var o = new Option(a[key].SirketAdi, a[key].Id);
+                        $('#txtXCompanies').append(o);
+                    });
+
+                    //swiperParent.swipeTo(7);
+                    window.location.href = "#EnvanterBilgisayar";
+                }
+            });
+
+        }
+        function gotoEnvanterYazici() {
+            //swiperParent.swipeTo(8);
+            window.location.href = "#yazicienvanter";
+        }
+        function gotoMenu() {
+            window.location.href = "#menu";
+        }
+        function gotoMenuEnvanter() {
+            window.location.href = "#envantermain";
+        }
+
+        function gotoMenuEnvanterBilgisayar() {
+            window.location.href = "#EnvanterBilgisayar";
+        }
+        function gotoMenuEnvanterYazici() {
+            window.location.href = "#EnvanterYazici";
+        }
+        function gotoMenuEnvanterUPS() {
+            window.location.href = "#EnvanterUPS";
+        }
+        function gotoMenuEnvanterNetworkUrunleri() {
+            window.location.href = "#EnvanterNetworkUrunleri";
+        }
+        function gotoMenuEnvanterKamera() {
+            window.location.href = "#EnvanterKamera";
+        }
+        function gotoMenuEnvanterSunucu() {
+            window.location.href = "#EnvanterSunucu";
+        }
+
+        function gotoBack() {
+            //window.history.back();
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            alert("Agent:" + userAgent);
+            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+                // IOS DEVICE
+                history.go(-1);
+            } else if (userAgent.match(/Android/i)) {
+                // ANDROID DEVICE
+                navigator.app.backHistory();
+            } else {
+                // EVERY OTHER DEVICE
+                history.go(-1);
+            }
+        }
+
+        function gotoEnvanterAP() {
+            //swiperParent.swipeTo(9);
+            window.location.href = "#apenvanter";
+        }
+        function gotoSifreBul() {
+            //swiperParent.swipeTo(4);
+            $('#txtBarkod').val("");
+            window.location.href = "#password";
+            var e = document.getElementById('tblAccPoint');
+            e.style.display = 'none';
+
+            var e2 = document.getElementById('tblServer');
+            e2.style.display = 'none';
+
+            var e3 = document.getElementById('tblBilgisayarlar');
+            e3.style.display = 'none';
+        }
+        function gotoServisTalep() {
+            //swiperParent.swipeTo(5);
+            window.location.href = "#service";
+        }
+        function gotoEnvanter() {
+            //swiperParent.swipeTo(6);
+            window.location.href = "#envantermain";
+        }
+        function gotoAll() {
+
+            $.ajax({
+                url: "http://localhost:4804/api/aktivite",
+                dataType: 'json',
+                success: function (a) {
+                    //swiperParent.swipeTo(3);
+                    window.location.href = "#activityList";
+
+                    $('#ul_list ul').remove();
+                    $('#ul_list').append('<ul data-role="listview"></ul>');
+                    listItems = $('#ul_list').find('ul');
+
+                    $.each(a, function (key) {
+
+                        html = '<li class="post" id="id_' + key + '">';
+                        html += '<a href="#"  ></a>';
+                        html += '<div class="post_right_reveal">';
+                        html += '<a href="#" onclick="gotodetail(' + a[key].Id + ')" >' + a[key].Musteri + '<br>' + a[key].Aciklama
+                            + '</a>';
+                        html += '</div>';
+
+
+                        html += '<div class="post_left" style="text-align: center;background-color: ' + a[key].Renk + '">';
+                        html += '    <span style="text-align: center;">' + a[key].PersonelAdi + '</span> <br>';
+                        html += '    <span style="text-align: center;">' + a[key].AktiviteDurumu + '</span>';
+                        html += '</div>';
+                        html += '</li>';
+
+                        listItems.append('<li>' + html + '</li>');
+                    });
+
+                    //$('#ul_list ul').listview();
+                    // Once all complete change the page
+                    //$.mobile.changePage("#results", "slide");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

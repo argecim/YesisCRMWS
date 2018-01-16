@@ -1,0 +1,182 @@
+﻿@charset "utf-8";
+/*
+* @Creaduo
+* developer. Abdurrahman ASLIYÜCE
+* designer. Sezer ULUDAĞ
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+:focus {
+  outline: none;
+}
+
+body {
+  font: 12px 'PT Sans Narrow', sans-serif;
+  color: #428bca;
+}
+
+div#bgOverlay {
+  background: #0866C6;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+div#loginBox {
+  background: #0866C6;
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  z-index: 11;
+  left: 50%;
+  top: 50%;
+  margin: -137px -200px;
+}
+div#loginBox h1.loginBoxTitle {
+  margin: 0 0 0 0;
+  padding: 0 0 0 10px;
+  border-left: 10px solid #fff;
+  font: bold 50px 'PT Sans Narrow', sans-serif;
+  color: #fff;
+}
+
+#loginForm {
+  margin: 0 30px;
+}
+#loginForm .formRow {
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+  z-index: 11;
+}
+#loginForm .formRow span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #C6C6C6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 13;
+}
+#loginForm .formRow span.labelUser {
+  background: url(../images/IconUser.png) no-repeat center center;
+}
+#loginForm .formRow span.labelPass {
+  background: url(../images/IconPass.png) no-repeat center center;
+}
+#loginForm .formRow input.loginInput {
+  width: 283px;
+  height: 40px;
+  line-height: 40px;
+  font: 16px 'PT Sans Narrow', sans-serif;
+  color: #86BEA3;
+  border: 1px solid #C6C6C6;
+  padding: 0 0 0 55px;
+  display: block;
+}
+#loginForm .formRow input.loginInput:focus {
+  background: #eeeeee;
+  color: #2F9C5D;
+}
+#loginForm .formRow tr='#FF42AA6E', endColorstr='#FF259554');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQyYWE2ZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzI1OTU1NCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #428bca), color-stop(100%, #61B9FB));
+  background-image: -webkit-linear-gradient(top, #428bca 0%, #61B9FB 100%);
+  background-image: -moz-linear-gradient(top, #428bca 0%, #61B9FB 100%);
+  background-image: -o-linear-gradient(top, #428bca 0%, #61B9FB 100%);
+  background-image: linear-gradient(top, #428bca 0%, #61B9FB 100%);
+  width: 100%;
+  height: 40px;
+  border: 1px solid #428bca;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  font: 20px 'PT Sans Narrow', sans-serif;
+  color: #eeeeee;
+  cursor: pointer;
+}
+#loginForm .formRow loginBtn:hover {
+  background-color: #54A4FF;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstndColorr='#FF60C58A', endColorloginBtn:hover {
+  background-color: #54A4FF;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF60C58A', endColorstr='#FF3FA269');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzYwYzU4YSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNmYTI2OSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%,#54A4FF), color-stop(100%, #6FB2FE));
+  background-image: -webkit-linear-gradient(top, #54A4FF 0%, #6FB2FE 100%);
+  background-image: -moz-linear-gradient(top, #54A4FF 0%, #6FB2FE 100%);
+  background-image: -o-linear-gradient(top, #54A4FF 0%, #6FB2FE 100%);
+  background-image: linear-gradient(top, #54A4FF 0%, #6FB2FE 100%);
+}
+
+span.validationMessage {
+  background: url(../images/IconWarning.png) no-repeat left center;
+  color: #ff3c3c;
+  padding: 2px 0 0 15px;
+  margin: 0 0 5px 0;
+  display: none;
+}

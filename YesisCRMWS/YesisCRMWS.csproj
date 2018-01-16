@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{41C0FD9A-E4C0-4974-99D2-50764C0FF2D4}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YesisCRMWS</RootNamespace>
+    <AssemblyName>YesisCRMWS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.4.0.30506\lib\net40\System.Web.Http.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiviteAciklamalari.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Aktivite.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AktiviteDurumu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AktiviteLoglari.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AktiviteSecenegi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AktiviteTipi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AltKategoriler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Baglanti.cs" />
+    <Compile Include="Controllers\ActivitiesController.cs" />
+    <Compile Include="Controllers\AktiviteController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\EnvanterBilgisayarController.cs" />
+    <Compile Include="Controllers\EnvanterController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LoginMobileController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\RestaurantsController.cs" />
+    <Compile Include="Controllers\ServisController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="EnvanterAccessPoint.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnvanterBilgisayarlar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnvanterServerler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Musteri.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Personel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restaurants.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="restorant_activity.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restorant_users.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VW_Restaurants.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="banner.png" />
+    <Content Include="barcodescanner.js" />
+    <Content Include="colors\beauty\beauty.css" />
+    <Content Include="colors\beauty\images\bg-orange.jpg" />
+    <Content Include="colors\beauty\images\bullet_checked.png" />
+    <Content Include="colors\beauty\images\bullet_cross.png" />
+    <Content Include="colors\beauty\images\bullet_cross_big.png" />
+    <Content Include="colors\beauty\images\bullet_cross_big_close.png" />
+    <Content Include="colors\beauty\images\bullet_cross_white.png" />
+    <Content Include="colors\beauty\images\comments.png" />
+    <Content Include="colors\beauty\images\logo.png" />
+    <Content Include="colors\beauty\images\toggle.png" />
+    <Content Include="colors\beauty\images\toggle_blog.png" />
+    <Content Include="colors\beauty\images\trans_black.png" />
+    <Content Include="colors\black\black.css" />
+    <Content Include="colors\black\images\bullet_checked.png" />
+    <Content Include="colors\black\images\bullet_cross.png" />
+    <Content Include="colors\black\images\bullet_cross_big.png" />
+    <Content Include="colors\black\images\bullet_cross_big_close.png" />
+    <Content Include="colors\black\images\bullet_cross_white.png" />
+    <Content Include="colors\black\images\comments.png" />
+    <Content Include="colors\black\images\logo.png" />
+    <Content Include="colors\black\images\toggle.png" />
+    <Content Include="colors\black\images\toggle_blog.png" />
+    <Content Include="colors\corporate\corporate.css" />
+    <Content Include="colors\corporate\images\bg-corporate.jpg" />
+    <Content Include="colors\corporate\images\bullet_checked.png" />
+    <Content Include="colors\corporate\images\bullet_cross.png" />
+    <Content Include="colors\corporate\images\bullet_cross_big.png" />
+    <Content Include="colors\corporate\images\bullet_cross_big_close.png" />
+    <Content Include="colors\corporate\images\bullet_cross_white.png" />
+    <Content Include="colors\corporate\images\comments.png" />
+    <Content Include="colors\corporate\images\toggle.png" />
+    <Content Include="colors\corporate\images\toggle_blog.png" />
+    <Content Include="colors\gradient\gradient.css" />
+    <Content Include="colors\gradient\images\bg-corporate.jpg" />
+    <Content Include="colors\gradient\images\bullet_checked.png" />
+    <Content Include="colors\gradient\images\bullet_cross.png" />
+    <Content Include="colors\gradient\images\bullet_cross_big.png" />
+    <Content Include="colors\gradient\images\bullet_cross_big_close.png" />
+    <Content Include="colors\gradient\images\bullet_cross_white.png" />
+    <Content Include="colors\gradient\images\comments.png" />
+    <Content Include="colors\gradient\images\toggle.png" />
+    <Content Include="colors\gradient\images\toggle_blog.png" />
+    <Content Include="colors\green\green.css" />
+    <Content Include="colors\green\images\bg-green.jpg" />
+    <Content Include="colors\green\images\bullet_checked.png" />
+    <Content Include="colors\green\images\bullet_cross.png" />
+    <Content Include="colors\green\images\bullet_cross_big.png" />
+    <Content Include="colors\green\images\bullet_cross_big_close.png" />
+    <Content Include="colors\green\images\bullet_cross_white.png" />
+    <Content Include="colors\green\images\comments.png" />
+    <Content Include="colors\green\images\logo.png" />
+    <Content Include="colors\green\images\toggle.png" />
+    <Content Include="colors\green\images\toggle_blog.png" />
+    <Content Include="colors\green\images\transparent_circle.png" />
+    <Content Include="colors\main\images\bg-main.jpg" />
+    <Content Include="colors\main\images\bullet_checked.png" />
+    <Content Include="colors\main\images\bullet_cross.png" />
+    <Content Include="colors\main\images\bullet_cross_big.png" />
+    <Content Include="colors\main\images\bullet_cross_big_close.png" />
+    <Content Include="colors\main\images\bullet_cross_white.png" />
+    <Content Include="colors\main\images\comments.png" />
+    <Content Include="colors\main\images\logo.png" />
+    <Content Include="colors\main\images\toggle.png" />
+    <Content Include="colors\main\images\toggle_blog.png" />
+    <Content Include="colors\main\main.css" />
+    <Content Include="colors\medical\images\bg-medical.jpg" />
+    <Content Include="colors\medical\images\bullet_checked.png" />
+    <Content Include="colors\medical\images\bullet_cross.png" />
+    <Content Include="colors\medical\images\bullet_cross_big.png" />
+    <Content Include="colors\medical\images\bullet_cross_big_close.png" />
+    <Content Include="colors\medical\images\bullet_cross_white.png" />
+    <Content Include="colors\medical\images\comments.png" />
+    <Content Include="colors\medical\images\logo.png" />
+    <Content Include="colors\medical\images\toggle.png" />
+    <Content Include="colors\medical\images\toggle_blog.png" />
+    <Content Include="colors\medical\images\trans_black.png" />
+    <Content Include="colors\medical\medical.css" />
+    <Content Include="colors\metro\images\bg-metro.jpg" />
+    <Content Include="colors\metro\images\bullet_checked.png" />
+    <Content Include="colors\metro\images\bullet_cross.png" />
+    <Content Include="colors\metro\images\bullet_cross_big.png" />
+    <Content Include="colors\metro\images\bullet_cross_big_close.png" />
+    <Content Include="colors\metro\images\bullet_cross_white.png" />
+    <Content Include="colors\metro\images\comments.png" />
+    <Content Include="colors\metro\images\toggle.png" />
+    <Content Include="colors\metro\images\toggle_blog.png" />
+    <Content Include="colors\metro\metro.css" />
+    <Content Include="colors\personal\images\bullet_checked.png" />
+    <Content Include="colors\personal\images\bullet_cross.png" />
+    <Content Include="colors\personal\images\bullet_cross_big.png" />
+    <Content Include="colors\personal\images\bullet_cross_big_close.png" />
+    <Content Include="colors\personal\images\bullet_cross_white.png" />
+    <Content Include="colors\personal\images\comments.png" />
+    <Content Include="colors\personal\images\logo.png" />
+    <Content Include="colors\personal\images\toggle.png" />
+    <Content Include="colors\personal\images\toggle_blog.png" />
+    <Content Include="colors\personal\personal.css" />
+    <Content Include="colors\restaurant\images\bg-restaurant.jpg" />
+    <Content Include="colors\restaurant\images\bullet_checked.png" />
+    <Content Include="colors\restaurant\images\bullet_cross.png" />
+    <Content Include="colors\restaurant\images\bullet_cross_big.png" />
+    <Content Include="colors\restaurant\images\bullet_cross_big_close.png" />
+    <Content Include="colors\restaurant\images\bullet_cross_white.png" />
+    <Content Include="colors\restaurant\images\comments.png" />
+    <Content Include="colors\restaurant\images\plate_bg.png" />
+    <Content Include="colors\restaurant\images\toggle.png" />
+    <Content Include="colors\restaurant\images\toggle_blog.png" />
+    <Content Include="colors\restaurant\images\trans_black.png" />
+    <Content Include="colors\restaurant\restaurant.css" />
+    <Content Include="colors\slider\images\bullet_checked.png" />
+    <Content Include="colors\slider\images\bullet_cross.png" />
+    <Content Include="colors\slider\images\bullet_cross_big.png" />
+    <Content Include="colors\slider\images\bullet_cross_big_close.png" />
+    <Content Include="colors\slider\images\bullet_cross_white.png" />
+    <Content Include="colors\slider\images\comments.png" />
+    <Content Include="colors\slider\images\next.png" />
+    <Content Include="colors\slider\images\prev.png" />
+    <Content Include="colors\slider\images\slide1.jpg" />
+    <Content Include="colors\slider\images\slide2.jpg" />
+    <Content Include="colors\slider\images\slide3.jpg" />
+    <Content Include="colors\slider\images\toggle.png" />
+    <Content Include="colors\slider\images\toggle_blog.png" />
+    <Content Include="colors\slider\images\trans_black.png" />
+    <Content Include="colors\slider\slider.css" />
+    <Content Include="colors\splash\images\bg-splash.jpg" />
+    <Content Include="colors\splash\images\bullet_checked.png" />
+    <Content Include="colors\splash\images\bullet_cross.png" />
+    <Content Include="colors\splash\images\bullet_cross_big.png" />
+    <Content Include="colors\splash\images\bullet_cross_big_close.png" />
+    <Content Include="colors\splash\images\bullet_cross_white.png" />
+    <Content Include="colors\splash\images\comments.png" />
+    <Content Include="colors\splash\images\logo.png" />
+    <Content Include="colors\splash\images\slide-to-navigate.png" />
+    <Content Include="colors\splash\images\toggle.png" />
+    <Content Include="colors\splash\images\toggle_blog.png" />
+    <Content Include="colors\splash\images\transparent_circle.png" />
+    <Content Include="colors\splash\images\trans_black.png" />
+    <Content Include="colors\splash\splash.css" />
+    <Content Include="colors\wedding\images\bg-wedding.jpg" />
+    <Content Include="colors\wedding\images\bullet_checked.png" />
+    <Content Include="colors\wedding\images\bullet_cross.png" />
+    <Content Include="colors\wedding\images\bullet_cross_big.png" />
+    <Content Include="colors\wedding\images\bullet_cross_big_close.png" />
+    <Content Include="colors\wedding\images\bullet_cross_white.png" />
+    <Content Include="colors\wedding\images\comments.png" />
+    <Content Include="colors\wedding\images\logo.png" />
+    <Content Include="colors\wedding\images\toggle.png" />
+    <Content Include="colors\wedding\images\toggle_blog.png" />
+    <Content Include="colors\wedding\images\trans_black.png" />
+    <Content Include="colors\wedding\wedding.css" />
+    <Content Include="colors\white\images\bullet_checked.png" />
+    <Content Include="colors\white\images\bullet_cross.png" />
+    <Content Include="colors\white\images\bullet_cross_big.png" />
+    <Content Include="colors\white\images\bullet_cross_big_close.png" />
+    <Content Include="colors\white\images\bullet_cross_white.png" />
+    <Content Include="colors\white\images\comments.png" />
+    <Content Include="colors\white\images\logo.png" />
+    <Content Include="colors\white\images\toggle.png" />
+    <Content Include="colors\white\images\toggle_blog.png" />
+    <Content Include="colors\white\white.css" />
+    <Content Include="config.xml" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="css\idangerous.swiper.css" />
+    <Content Include="css\img\icons.png" />
+    <Content Include="css\img\icons.svg" />
+    <Content Include="css\img\loader.gif" />
+    <Content Include="css\plyr.css" />
+    <Content Include="css\plyr.svg" />
+    <Content Include="css\style.css" />
+    <Content Include="css\swipebox.css" />
+    <Content Include="css\video-player licence.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Images\apple-touch-icon.png" />
+    <Content Include="Images\apple-touch-startup-image-320x460.png" />
+    <Content Include="Images\apple-touch-startup-image-640x920.png" />
+    <Content Include="Images\avatar.jpg" />
+    <Content Include="Images\grabbing.png" />
+    <Content Include="Images\icons\about.png" />
+    <Content Include="Images\icons\back.png" />
+    <Content Include="Images\icons\blog.png" />
+    <Content Include="Images\icons\calendar.png" />
+    <Content Include="Images\icons\cart.png" />
+    <Content Include="Images\icons\clients.png" />
+    <Content Include="Images\icons\code.png" />
+    <Content Include="Images\icons\contact.png" />
+    <Content Include="Images\icons\docs.png" />
+    <Content Include="Images\icons\home.png" />
+    <Content Include="Images\icons\images.jpg" />
+    <Content Include="Images\icons\law.png" />
+    <Content Include="Images\icons\layout.png" />
+    <Content Include="Images\icons\light.png" />
+    <Content Include="Images\icons\map_pin.png" />
+    <Content Include="Images\icons\menu.png" />
+    <Content Include="Images\icons\pencil.png" />
+    <Content Include="Images\icons\phone.png" />
+    <Content Include="Images\icons\photos.png" />
+    <Content Include="Images\icons\security.png" />
+    <Content Include="Images\icons\services.png" />
+    <Content Include="Images\icons\social\digg.png" />
+    <Content Include="Images\icons\social\facebook.png" />
+    <Content Include="Images\icons\social\flickr.png" />
+    <Content Include="Images\icons\social\google.png" />
+    <Content Include="Images\icons\social\pinterest.png" />
+    <Content Include="Images\icons\social\reddit.png" />
+    <Content Include="Images\icons\social\twitter.png" />
+    <Content Include="Images\icons\social\vimeo.png" />
+    <Content Include="Images\icons\stats.png" />
+    <Content Include="Images\icons\tools.png" />
+    <Content Include="Images\icons\top.png" />
+    <Content Include="Images\icons\travel.png" />
+    <Content Include="Images\icons\twitter.png" />
+    <Content Include="Images\icons\videos.png" />
+    <Content Include="Images\icons_colored\about.png" />
+    <Content Include="Images\icons_colored\blog.png" />
+    <Content Include="Images\icons_colored\calendar.png" />
+    <Content Include="Images\icons_colored\cart.png" />
+    <Content Include="Images\icons_colored\clients.png" />
+    <Content Include="Images\icons_colored\code.png" />
+    <Content Include="Images\icons_colored\contact.png" />
+    <Content Include="Images\icons_colored\docs.png" />
+    <Content Include="Images\icons_colored\home.png" />
+    <Content Include="Images\icons_colored\law.png" />
+    <Content Include="Images\icons_colored\layout.png" />
+    <Content Include="Images\icons_colored\light.png" />
+    <Content Include="Images\icons_colored\map_pin.png" />
+    <Content Include="Images\icons_colored\menu.png" />
+    <Content Include="Images\icons_colored\pencil.png" />
+    <Content Include="Images\icons_colored\phone.png" />
+    <Content Include="Images\icons_colored\photos.png" />
+    <Content Include="Images\icons_colored\security.png" />
+    <Content Include="Images\icons_colored\services.png" />
+    <Content Include="Images\icons_colored\social\digg.png" />
+    <Content Include="Images\icons_colored\social\facebook.png" />
+    <Content Include="Images\icons_colored\social\flickr.png" />
+    <Content Include="Images\icons_colored\social\google.png" />
+    <Content Include="Images\icons_colored\social\pinterest.png" />
+    <Content Include="Images\icons_colored\social\reddit.png" />
+    <Content Include="Images\icons_colored\social\twitter.png" />
+    <Content Include="Images\icons_colored\social\vimeo.png" />
+    <Content Include="Images\icons_colored\stats.png" />
+    <Content Include="Images\icons_colored\tools.png" />
+    <Content Include="Images\icons_colored\top.png" />
+    <Content Include="Images\icons_colored\travel.png" />
+    <Content Include="Images\icons_colored\twitter.png" />
+    <Content Include="Images\icons_colored\videos.png" />
+    <Content Include="Images\icons_contour\about.png" />
+    <Content Include="Images\icons_contour\blog.png" />
+    <Content Include="Images\icons_contour\calendar.png" />
+    <Content Include="Images\icons_contour\cart.png" />
+    <Content Include="Images\icons_contour\clients.png" />
+    <Content Include="Images\icons_contour\code.png" />
+    <Content Include="Images\icons_contour\contact.png" />
+    <Content Include="Images\icons_contour\docs.png" />
+    <Content Include="Images\icons_contour\home.png" />
+    <Content Include="Images\icons_contour\law.png" />
+    <Content Include="Images\icons_contour\layout.png" />
+    <Content Include="Images\icons_contour\light.png" />
+    <Content Include="Images\icons_contour\map_pin.png" />
+    <Content Include="Images\icons_contour\menu.png" />
+    <Content Include="Images\icons_contour\pencil.png" />
+    <Content Include="Images\icons_contour\phone.png" />
+    <Content Include="Images\icons_contour\photos.png" />
+    <Content Include="Images\icons_contour\security.png" />
+    <Content Include="Images\icons_contour\services.png" />
+    <Content Include="Images\icons_contour\social\digg.png" />
+    <Content Include="Images\icons_contour\social\facebook.png" />
+    <Content Include="Images\icons_contour\social\flickr.png" />
+    <Content Include="Images\icons_contour\social\google.png" />
+    <Content Include="Images\icons_contour\social\pinterest.png" />
+    <Content Include="Images\icons_contour\social\reddit.png" />
+    <Content Include="Images\icons_contour\social\twitter.png" />
+    <Content Include="Images\icons_contour\social\vimeo.png" />
+    <Content Include="Images\icons_contour\stats.png" />
+    <Content Include="Images\icons_contour\tools.png" />
+    <Content Include="Images\icons_contour\top.png" />
+    <Content Include="Images\icons_contour\travel.png" />
+    <Content Include="Images\icons_contour\twitter.png" />
+    <Content Include="Images\icons_contour\videos.png" />
+    <Content Include="Images\icons_dark\about.png" />
+    <Content Include="Images\icons_dark\blog.png" />
+    <Content Include="Images\icons_dark\calendar.png" />
+    <Content Include="Images\icons_dark\cart.png" />
+    <Content Include="Images\icons_dark\clients.png" />
+    <Content Include="Images\icons_dark\code.png" />
+    <Content Include="Images\icons_dark\contact.png" />
+    <Content Include="Images\icons_dark\docs.png" />
+    <Content Include="Images\icons_dark\home.png" />
+    <Content Include="Images\icons_dark\law.png" />
+    <Content Include="Images\icons_dark\layout.png" />
+    <Content Include="Images\icons_dark\light.png" />
+    <Content Include="Images\icons_dark\map_pin.png" />
+    <Content Include="Images\icons_dark\menu.png" />
+    <Content Include="Images\icons_dark\pencil.png" />
+    <Content Include="Images\icons_dark\phone.png" />
+    <Content Include="Images\icons_dark\photos.png" />
+    <Content Include="Images\icons_dark\security.png" />
+    <Content Include="Images\icons_dark\services.png" />
+    <Content Include="Images\icons_dark\social\digg.png" />
+    <Content Include="Images\icons_dark\social\facebook.png" />
+    <Content Include="Images\icons_dark\social\flickr.png" />
+    <Content Include="Images\icons_dark\social\google.png" />
+    <Content Include="Images\icons_dark\social\pinterest.png" />
+    <Content Include="Images\icons_dark\social\reddit.png" />
+    <Content Include="Images\icons_dark\social\twitter.png" />
+    <Content Include="Images\icons_dark\social\vimeo.png" />
+    <Content Include="Images\icons_dark\stats.png" />
+    <Content Include="Images\icons_dark\tools.png" />
+    <Content Include="Images\icons_dark\top.png" />
+    <Content Include="Images\icons_dark\travel.png" />
+    <Content Include="Images\icons_dark\twitter.png" />
+    <Content Include="Images\icons_dark\videos.png" />
+    <Content Include="Images\loader.gif" />
+    <Content Include="Images\page_photo.jpg" />
+    <Content Include="Images\photos\photo1.jpg" />
+    <Content Include="Images\photos\photo10.jpg" />
+    <Content Include="Images\photos\photo11.jpg" />
+    <Content Include="Images\photos\photo12.jpg" />
+    <Content Include="Images\photos\photo2.jpg" />
+    <Content Include="Images\photos\photo3.jpg" />
+    <Content Include="Images\photos\photo4.jpg" />
+    <Content Include="Images\photos\photo5.jpg" />
+    <Content Include="Images\photos\photo6.jpg" />
+    <Content Include="Images\photos\photo7.jpg" />
+    <Content Include="Images\photos\photo8.jpg" />
+    <Content Include="Images\photos\photo9.jpg" />
+    <Content Include="Images\portfolio_thumb.jpg" />
+    <Content Include="Images\portfolio_thumb2.jpg" />
+    <Content Include="Images\portfolio_thumb3.jpg" />
+    <Content Include="js\code.js" />
+    <Content Include="js\idangerous.swiper-2.1.min.js" />
+    <Content Include="js\idangerous.swiper.scrollbar-2.1.js" />
+    <Content Include="js\jquery-1.10.1.min.js" />
+    <Content Include="js\jquery.flexslider-min.js" />
+    <Content Include="js\jquery.swipebox.js" />
+    <Content Include="js\jquery.tabify.js" />
+    <Content Include="js\jquery.validate.min.js" />
+    <Content Include="js\load.js" />
+    <Content Include="js\plyr.js" />
+    <Content Include="js\twitter\index.php" />
+    <Content Include="js\twitter\jquery.tweet.js" />
+    <Content Include="js\twitter\jquery.tweet.min.js" />
+    <Content Include="js\twitter\lib\tmhOAuth.php" />
+    <Content Include="js\twitter\lib\tmhUtilities.php" />
+    <Content Include="LoginCss\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="LoginCss\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="LoginCss\bootstrap\css\bootstrap.css" />
+    <Content Include="LoginCss\bootstrap\css\bootstrap.min.css" />
+    <Content Include="LoginCss\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="LoginCss\bootstrap\js\bootstrap.js" />
+    <Content Include="LoginCss\bootstrap\js\bootstrap.min.js" />
+    <Content Include="LoginCss\bootstrap\js\npm.js" />
+    <Content Include="LoginCss\css\styles.css" />
+    <Content Include="LoginCss\images\logo.png" />
+    <Content Include="LoginStyle\images\1IconPass.png" />
+    <Content Include="LoginStyle\images\1IconUser.png" />
+    <Content Include="LoginStyle\images\2IconUser.png" />
+    <Content Include="LoginStyle\images\bg.jpg" />
+    <Content Include="LoginStyle\images\buttonGiris.jpg" />
+    <Content Include="LoginStyle\images\IconPass.png" />
+    <Content Include="LoginStyle\images\IconUser.png" />
+    <Content Include="LoginStyle\images\IconWarning.png" />
+    <Content Include="LoginStyle\images\Patt.png" />
+    <Content Include="LoginStyle\scripts\jquery-1.10.0.min.js" />
+    <Content Include="LoginStyle\scripts\main.js" />
+    <Content Include="LoginStyle\scripts\supersized.core.3.2.1.min.js" />
+    <Content Include="LoginStyle\styles\style.css" />
+    <Content Include="LoginStyle\styles\supersized.core.css" />
+    <Content Include="logo%402x.png" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="colors\.DS_Store" />
+    <Content Include="colors\beauty\images\Thumbs.db" />
+    <Content Include="colors\black\images\Thumbs.db" />
+    <Content Include="colors\corporate\images\Thumbs.db" />
+    <Content Include="colors\gradient\images\Thumbs.db" />
+    <Content Include="colors\green\images\Thumbs.db" />
+    <Content Include="colors\main\images\Thumbs.db" />
+    <Content Include="colors\medical\images\Thumbs.db" />
+    <Content Include="colors\metro\images\Thumbs.db" />
+    <Content Include="colors\personal\.DS_Store" />
+    <Content Include="colors\personal\images\Thumbs.db" />
+    <Content Include="colors\restaurant\images\Thumbs.db" />
+    <Content Include="colors\slider\images\Thumbs.db" />
+    <Content Include="colors\splash\images\Thumbs.db" />
+    <Content Include="colors\wedding\images\Thumbs.db" />
+    <Content Include="colors\white\images\Thumbs.db" />
+    <Content Include="css\img\Thumbs.db" />
+    <Content Include="Images\.DS_Store" />
+    <Content Include="Images\icons\social\Thumbs.db" />
+    <Content Include="Images\icons\Thumbs.db" />
+    <Content Include="Images\icons_colored\social\Thumbs.db" />
+    <Content Include="Images\icons_colored\Thumbs.db" />
+    <Content Include="Images\icons_contour\social\Thumbs.db" />
+    <Content Include="Images\icons_contour\Thumbs.db" />
+    <Content Include="Images\icons_dark\social\Thumbs.db" />
+    <Content Include="Images\Thumbs.db" />
+    <Content Include="LoginCss\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="LoginCss\bootstrap\css\bootstrap.css.map" />
+    <Content Include="LoginCss\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="LoginCss\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="LoginCss\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="LoginStyle\styles\.DS_Store" />
+    <None Include="Properties\PublishProfiles\ws.pubxml" />
+    <None Include="Properties\PublishProfiles\wsdeploy.pubxml" />
+    <Content Include="Scripts\bootstrap-toastr\README.md" />
+    <Content Include="Scripts\bootstrap-toastr\toastr.min.js.map" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap-toastr\toastr.css" />
+    <Content Include="Scripts\bootstrap-toastr\toastr.js" />
+    <Content Include="Scripts\bootstrap-toastr\toastr.min.css" />
+    <Content Include="Scripts\bootstrap-toastr\toastr.min.js" />
+    <Content Include="Scripts\global.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="videos\video-poster.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\Account.cshtml" />
+    <Content Include="Views\Home\View1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="js\twitter\cache\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4804</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4804/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

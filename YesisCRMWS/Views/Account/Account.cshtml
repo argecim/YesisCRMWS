@@ -1,0 +1,31 @@
+﻿<div id="body">
+    <link rel="stylesheet" type="text/css" href="LoginStyle/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="LoginStyle/styles/supersized.core.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
+
+    <div id="loginBox">
+        <center><img id="imgLogo" runat="server" class="img-responsive" alt="" /></center>
+        <form id="loginForm" runat="server">
+            <div class="formRow">
+                <span class="labelUser"></span>
+                <input type="text" runat="server" id="txtKullaniciAdi1" placeholder="Kullanıcı Adı" class="loginInput" />
+            </div>
+            <div class="formRow">
+                <span class="labelPass"></span>
+                <input type="password" id="txtSifre" runat="server" placeholder="Şifre" class="loginInput" />
+            </div>
+            <div class="formRow">
+                @*<asp:ImageButton ID="btnGiris" runat="server" ImageUrl="~/LoginStyle/images/buttonGiris.jpg" Width="100%" OnClick="btnGiris_Click2" />*@
+                <br />
+            </div>
+        </form>
+        <!-- end #loginForm -->
+    </div>
+    <!-- end #loginBox -->
+    <div id="bgOverlay"></div>
+
+    <script type="text/javascript" src="LoginStyle/scripts/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="LoginStyle/scripts/supersized.core.3.2.1.min.js"></script>
+    <script type="text/javascript" src="LoginStyle/scripts/main.js"></script>
+    <script src="~/Scripts/global.js"></script>
+</div>

@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CRMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="CRMModelStoreContainer">
+          <EntitySet Name="ActiviteAciklamalari" EntityType="CRMModel.Store.ActiviteAciklamalari" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Aktivite" EntityType="CRMModel.Store.Aktivite" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AktiviteDurumu" EntityType="CRMModel.Store.AktiviteDurumu" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AktiviteLoglari" EntityType="CRMModel.Store.AktiviteLoglari" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AktiviteSecenegi" EntityType="CRMModel.Store.AktiviteSecenegi" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AktiviteTipi" EntityType="CRMModel.Store.AktiviteTipi" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AltKategoriler" EntityType="CRMModel.Store.AltKategoriler" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EnvanterAccessPoint" EntityType="CRMModel.Store.EnvanterAccessPoint" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EnvanterBilgisayarlar" EntityType="CRMModel.Store.EnvanterBilgisayarlar" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EnvanterServerler" EntityType="CRMModel.Store.EnvanterServerler" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Musteri" EntityType="CRMModel.Store.Musteri" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Personel" EntityType="CRMModel.Store.Personel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Restaurants" EntityType="CRMModel.Store.Restaurants" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="restorant_activity" EntityType="CRMModel.Store.restorant_activity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Restorant_users" EntityType="CRMModel.Store.Restorant_users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VW_Restaurants" EntityType="CRMModel.Store.VW_Restaurants" store:Type="Views" store:Schema="dbo" store:Name="VW_Restaurants">
+            <DefiningQuery>SELECT 
+      [VW_Restaurants].[ID] AS [ID], 
+      [VW_Restaurants].[Name] AS [Name], 
+      [VW_Restaurants].[description] AS [description], 
+      [VW_Restaurants].[Address] AS [Address], 
+      [VW_Restaurants].[Logo] AS [Logo], 
+      [VW_Restaurants].[latitude] AS [latitude], 
+      [VW_Restaurants].[longitude] AS [longitude], 
+      [VW_Restaurants].[city] AS [city], 
+      [VW_Restaurants].[country] AS [country], 
+      [VW_Restaurants].[category] AS [category], 
+      [VW_Restaurants].[logourl] AS [logourl], 
+      [VW_Restaurants].[town] AS [town], 
+      [VW_Restaurants].[distance] AS [distance]
+      FROM [dbo].[VW_Restaurants] AS [VW_Restaurants]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="ActiviteAciklamalari">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AktiviteId" Type="int" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="500" />
+          <Property Name="PersonelId" Type="int" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Aktivite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriId" Type="int" />
+          <Property Name="AktiviteTipiId" Type="int" />
+          <Property Name="AktiviteSecenegiId" Type="int" />
+          <Property Name="AktiviteDurumuId" Type="int" />
+          <Property Name="PersonelId" Type="int" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="500" />
+          <Property Name="Oncelik" Type="tinyint" />
+          <Property Name="Fatura" Type="tinyint" />
+          <Property Name="MuhasebelestiMi" Type="tinyint" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="Statusu" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Barkod" Type="varchar" MaxLength="50" />
+          <Property Name="OperasyondaMi" Type="bit" />
+          <Property Name="MailGittiMi" Type="bit" />
+          <Property Name="Aciklama1" Type="varchar" MaxLength="250" />
+          <Property Name="Aciklama2" Type="varchar" MaxLength="250" />
+          <Property Name="Aciklama3" Type="varchar" MaxLength="250" />
+          <Property Name="Aciklama4" Type="varchar" MaxLength="250" />
+          <Property Name="Aciklama5" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="AktiviteDurumu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AktiviteTipiId" Type="int" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="50" />
+          <Property Name="Renk" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AktiviteLoglari">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AktiviteId" Type="int" />
+          <Property Name="Statusu" Type="varchar" MaxLength="200" />
+          <Property Name="PersonelId" Type="int" />
+          <Property Name="Tarih" Type="datetime" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AktiviteSecenegi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AktiviteTipiId" Type="int" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AktiviteTipi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AltKategoriler">
+          <Key>
+            <PropertyRef Name="AltKategoriId" />
+          </Key>
+          <Property Name="AltKategoriId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AltKategoriAdi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Resim" Type="nvarchar" MaxLength="50" />
+          <Property Name="KategoriId" Type="int" />
+          <Property Name="Sil" Type="bit" />
+          <Property Name="Aktif" Type="bit" />
+          <Property Name="Url" Type="nvarchar" MaxLength="50" />
+          <Property Name="SiraNo" Type="int" />
+        </EntityType>
+        <EntityType Name="EnvanterAccessPoint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriId" Type="int" />
+          <Property Name="Barkod" Type="varchar" MaxLength="50" />
+          <Property Name="MarkaModeli" Type="varchar" MaxLength="50" />
+          <Property Name="AccessPointSSID" Type="varchar" MaxLength="50" />
+          <Property Name="AccessPointSifresi" Type="varchar" MaxLength="50" />
+          <Property Name="AccessPointLocalIP" Type="varchar" MaxLength="50" />
+          <Property Name="AccessPointArayuzId" Type="varchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="250" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EnvanterBilgisayarlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriId" Type="int" />
+          <Property Name="UrununTuru" Type="varchar" MaxLength="50" />
+          <Property Name="KullaniciAdi" Type="varchar" MaxLength="50" />
+          <Property Name="KullaniciMailAdresi" Type="varchar" MaxLength="50" />
+          <Property Name="Barkod" Type="varchar" MaxLength="50" />
+          <Property Name="Cpu" Type="varchar" MaxLength="50" />
+          <Property Name="Ram" Type="varchar" MaxLength="50" />
+          <Property Name="SistemDiski" Type="varchar" MaxLength="50" />
+          <Property Name="EkranKarti" Type="varchar" MaxLength="50" />
+          <Property Name="IsletimSistemi" Type="varchar" MaxLength="50" />
+          <Property Name="KullandigiDigerYazilimlar1" Type="varchar" MaxLength="50" />
+          <Property Name="KullandigiDigerYazilimlar2" Type="varchar" MaxLength="50" />
+          <Property Name="KullandigiDigerYazilimlar3" Type="varchar" MaxLength="50" />
+          <Property Name="OfficeSurumu" Type="varchar" MaxLength="50" />
+          <Property Name="Antivirus" Type="varchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="250" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EnvanterServerler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriId" Type="int" />
+          <Property Name="Barkod" Type="varchar" MaxLength="50" />
+          <Property Name="ServerModeli" Type="varchar" MaxLength="50" />
+          <Property Name="Cpu" Type="varchar" MaxLength="50" />
+          <Property Name="Ram" Type="varchar" MaxLength="50" />
+          <Property Name="SistemDiski" Type="varchar" MaxLength="50" />
+          <Property Name="ServerAdi" Type="varchar" MaxLength="50" />
+          <Property Name="ServerSifresi" Type="varchar" MaxLength="50" />
+          <Property Name="FirmaIPPort" Type="varchar" MaxLength="50" />
+          <Property Name="ServerIP" Type="varchar" MaxLength="50" />
+          <Property Name="DomainServerId" Type="varchar" MaxLength="50" />
+          <Property Name="DomainServerSifresi" Type="varchar" MaxLength="50" />
+          <Property Name="DomainAdi" Type="varchar" MaxLength="50" />
+          <Property Name="DomainServerIp" Type="varchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="250" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SirketAdi" Type="varchar" MaxLength="100" />
+          <Property Name="YetkiliKisi" Type="varchar" MaxLength="50" />
+          <Property Name="EPosta" Type="varchar" MaxLength="100" />
+          <Property Name="Sifre" Type="varchar" MaxLength="10" />
+          <Property Name="TelefonNo1" Type="varchar" MaxLength="30" />
+          <Property Name="TelefonNo2" Type="varchar" MaxLength="30" />
+          <Property Name="CepTelefonu" Type="varchar" MaxLength="30" />
+          <Property Name="FaxNo" Type="varchar" MaxLength="30" />
+          <Property Name="Ulke" Type="varchar" MaxLength="50" />
+          <Property Name="Il" Type="varchar" MaxLength="50" />
+          <Property Name="Ilce" Type="varchar" MaxLength="50" />
+          <Property Name="Semt" Type="varchar" MaxLength="50" />
+          <Property Name="Adres" Type="varchar" MaxLength="150" />
+          <Property Name="VergiDairesi" Type="varchar" MaxLength="50" />
+          <Property Name="VergiNo" Type="varchar" MaxLength="50" />
+          <Property Name="MusteriGrubu" Type="varchar" MaxLength="50" />
+          <Property Name="MusteriAnaGrubu" Type="varchar" MaxLength="50" />
+          <Property Name="MusteriAltGrubu" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Arama" Type="varchar(max)" />
+          <Property Name="PcAdet" Type="int" />
+          <Property Name="Sektorler" Type="varchar" MaxLength="50" />
+          <Property Name="SonIslemTarihi" Type="datetime" />
+          <Property Name="PazarlamaDurumu" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AdiSoyadi" Type="varchar" MaxLength="50" />
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sifresi" Type="varchar" MaxLength="50" />
+          <Property Name="Yetki" Type="tinyint" />
+          <Property Name="Gorev" Type="nvarchar" MaxLength="100" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="100" />
+          <Property Name="DogumTarihi" Type="date" />
+          <Property Name="MedeniDurumu" Type="nvarchar" MaxLength="10" />
+          <Property Name="TCKimlikNo" Type="nvarchar" MaxLength="12" />
+          <Property Name="KisiselTelefonu" Type="varchar" MaxLength="50" />
+          <Property Name="SirketTelefonu" Type="varchar" MaxLength="50" />
+          <Property Name="IseGirisTarihi" Type="date" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="50" />
+          <Property Name="SiteTemasi" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateUser" Type="int" />
+          <Property Name="UpdateUser" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Resim" Type="nvarchar" MaxLength="50" />
+          <Property Name="Aktif" Type="bit" />
+        </EntityType>
+        <EntityType Name="Restaurants">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Logo" Type="varbinary(max)" />
+          <Property Name="latitude" Type="float" />
+          <Property Name="longitude" Type="float" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="country" Type="nvarchar" MaxLength="50" />
+          <Property Name="category" Type="nvarchar" MaxLength="50" />
+          <Property Name="logourl" Type="nvarchar(max)" />
+          <Property Name="town" Type="nvarchar" MaxLength="50" />
+          <Property Name="distance" Type="numeric" Scale="2" />
+        </EntityType>
+        <EntityType Name="restorant_activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="restaurant_name" Type="nvarchar" MaxLength="500" />
+          <Property Name="process_date" Type="datetime" />
+          <Property Name="process_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="amount" Type="numeric" Scale="2" />
+          <Property Name="pos_or_mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="userid" Type="int" />
+          <Property Name="restaurant_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Restorant_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="smscode" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="isLocked" Type="bit" />
+          <Property Name="lockDate" Type="datetime" />
+          <Property Name="last_balance" Type="numeric" Scale="2" />
+          <Property Name="wrongLoginCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CRM.dbo.VW_Restaurants' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="VW_Restaurants">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Logo" Type="varbinary(max)" />
+          <Property Name="latitude" Type="float" />
+          <Property Name="longitude" Type="float" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="country" Type="nvarchar" MaxLength="50" />
+          <Property Name="category" Type="nvarchar" MaxLength="50" />
+          <Property Name="logourl" Type="nvarchar(max)" />
+          <Property Name="town" Type="nvarchar" MaxLength="50" />
+          <Property Name="distance" Type="float" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CRMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CRMEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Aktivite" EntityType="CRMModel.Aktivite" />
+          <EntitySet Name="ActiviteAciklamalari" EntityType="CRMModel.ActiviteAciklamalari" />
+          <EntitySet Name="AktiviteDurumu" EntityType="CRMModel.AktiviteDurumu" />
+          <EntitySet Name="AktiviteLoglari" EntityType="CRMModel.AktiviteLoglari" />
+          <EntitySet Name="AktiviteSecenegi" EntityType="CRMModel.AktiviteSecenegi" />
+          <EntitySet Name="AktiviteTipi" EntityType="CRMModel.AktiviteTipi" />
+          <EntitySet Name="AltKategoriler" EntityType="CRMModel.AltKategoriler" />
+          <EntitySet Name="Personel" EntityType="CRMModel.Personel" />
+          <EntitySet Name="Musteri" EntityType="CRMModel.Musteri" />
+          <EntitySet Name="EnvanterAccessPoint" EntityType="CRMModel.EnvanterAccessPoint" />
+          <EntitySet Name="EnvanterBilgisayarlar" EntityType="CRMModel.EnvanterBilgisayarlar" />
+          <EntitySet Name="EnvanterServerler" EntityType="CRMModel.EnvanterServerler" />
+          <EntitySet Name="Restaurants" EntityType="CRMModel.Restaurants" />
+          <EntitySet Name="VW_Restaurants" EntityType="CRMModel.VW_Restaurants" />
+          <EntitySet Name="Restorant_users" EntityType="CRMModel.Restorant_users" />
+          <EntitySet Name="restorant_activity" EntityType="CRMModel.restorant_activity" />
+        </EntityContainer>
+        <EntityType Name="Aktivite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MusteriId" Type="Int32" />
+          <Property Name="AktiviteTipiId" Type="Int32" />
+          <Property Name="AktiviteSecenegiId" Type="Int32" />
+          <Property Name="AktiviteDurumuId" Type="Int32" />
+          <Property Name="PersonelId" Type="Int32" />
+          <Property Name="Aciklama" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Oncelik" Type="Byte" />
+          <Property Name="Fatura" Type="Byte" />
+          <Property Name="MuhasebelestiMi" Type="Byte" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Statusu" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateUser" Type="Int32" />
+          <Property Name="UpdateUser" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="Barkod" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="OperasyondaMi" Type="Boolean" />
+          <Property Name="MailGittiMi" Type="Boolean" />
+          <Property Name="Aciklama1" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Aciklama2" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Aciklama3" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Aciklama4" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Aciklama5" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ActiviteAciklamalari">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AktiviteId" />
+          <Property Type="String" Name="Aciklama" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PersonelId" />
+          <Property Type="DateTime" Name="Tarih" Precision="3" />
+          <Property Type="Int32" Name="CreateUser" />
+          <Property Type="Int32" Name="UpdateUser" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="AktiviteDurumu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AktiviteTipiId" />
+          <Property Type="String" Name="Aciklama" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Renk" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CreateUser" />
+          <Property Type="Int32" Name="UpdateUser" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="AktiviteLoglari">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AktiviteId" />
+          <Property Type="String" Name="Statusu" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PersonelId" />
+          <Property Type="DateTime" Name="Tarih" Precision="3" />
+          <Property Type="Int32" Name="CreateUser" />
+          <Property Type="Int32" Name="UpdateUser" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="AktiviteSecenegi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AktiviteTipiId" />
+          <Property Type="String" Name="Aciklama" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreateUser" />
+          <Property Type="Int32" Name="UpdateUser" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="AktiviteTipi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Aciklama" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreateUser" />
+          <Property Type="Int32" Name="UpdateUser" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="AltKategoriler">
+          <Key>
+            <PropertyRef Name="AltKategoriId" />
+          </Key>
+          <Property Type="Int32" Name="AltKategoriId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AltKategoriAdi" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Resim" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="KategoriId" />
+          <Property Type="Boolean" Name="Sil" />
+          <Property Type="Boolean" Name="Aktif" />
+          <Property Type="String" Name="Url" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SiraNo" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AdiSoyadi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KullaniciAdi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sifresi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="Yetki" />
+          <Property Type="String" Name="Gorev" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Adres" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DogumTarihi" Precision="0" />
+          <Property Type="String" Name="MedeniDurumu" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TCKimlikNo" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="KisiselTelefonu" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SirketTelefonu" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="IseGirisTarihi" Precision="0" />
+          <Property Type="String" Name="Aciklama" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SiteTemasi" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CreateUser" />
+          <Property Type="Int32" Name="UpdateUser" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+          <Property Type="String" Name="Resim" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Aktif" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SirketAdi" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="YetkiliKisi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EPosta" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Sifre" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TelefonNo1" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TelefonNo2" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CepTelefonu" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FaxNo" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ulke" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Il" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ilce" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Semt" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Adres" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VergiDairesi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VergiNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MusteriGrubu" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MusteriAnaGrubu" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MusteriAltGrubu" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreateUser" />
+          <Property Type="Int32" Name="UpdateUser" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+          <Property Type="String" Name="Arama" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PcAdet" />
+          <Property Type="String" Name="Sektorler" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="SonIslemTarihi" Precision="3" />
+          <Property Type="String" Name="PazarlamaDurumu" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EnvanterAccessPoint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MusteriId" />
+          <Property Type="String" Name="Barkod" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MarkaModeli" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AccessPointSSID" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AccessPointSifresi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AccessPointLocalIP" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AccessPointArayuzId" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Aciklama" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreateUser" />
+          <Property Type="Int32" Name="UpdateUser" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="EnvanterBilgisayarlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MusteriId" />
+          <Property Type="String" Name="UrununTuru" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KullaniciAdi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KullaniciMailAdresi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Barkod" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Cpu" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ram" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SistemDiski" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EkranKarti" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="IsletimSistemi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KullandigiDigerYazilimlar1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KullandigiDigerYazilimlar2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="KullandigiDigerYazilimlar3" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OfficeSurumu" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Antivirus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Aciklama" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreateUser" />
+          <Property Type="Int32" Name="UpdateUser" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="EnvanterServerler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MusteriId" />
+          <Property Type="String" Name="Barkod" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServerModeli" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Cpu" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ram" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SistemDiski" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServerAdi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServerSifresi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FirmaIPPort" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ServerIP" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DomainServerId" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DomainServerSifresi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DomainAdi" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DomainServerIp" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Aciklama" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreateUser" />
+          <Property Type="Int32" Name="UpdateUser" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="Restaurants">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Logo" MaxLength="Max" FixedLength="false" />
+          <Property Type="Single" Name="latitude" />
+          <Property Type="Single" Name="longitude" />
+          <Property Type="String" Name="city" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="country" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="category" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="logourl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="town" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="distance" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="VW_Restaurants">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Logo" MaxLength="Max" FixedLength="false" />
+          <Property Type="Double" Name="latitude" />
+          <Property Type="Double" Name="longitude" />
+          <Property Type="String" Name="city" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="country" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="category" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="logourl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="town" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="distance" />
+        </EntityType>
+        <EntityType Name="Restorant_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="username" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="password" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="smscode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="customer_name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="customer_surname" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="customer_id" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isLocked" />
+          <Property Type="DateTime" Name="lockDate" Precision="3" />
+          <Property Type="Decimal" Name="last_balance" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="wrongLoginCount" />
+        </EntityType>
+        <EntityType Name="restorant_activity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="restaurant_name" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="process_date" Precision="3" />
+          <Property Type="String" Name="process_type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="amount" Precision="18" Scale="2" />
+          <Property Type="String" Name="pos_or_mobile" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="userid" />
+          <Property Type="Int32" Name="restaurant_id" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CRMModelStoreContainer" CdmEntityContainer="CRMEntities1">
+          <EntitySetMapping Name="Aktivite">
+            <EntityTypeMapping TypeName="CRMModel.Aktivite">
+              <MappingFragment StoreEntitySet="Aktivite">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+                <ScalarProperty Name="AktiviteTipiId" ColumnName="AktiviteTipiId" />
+                <ScalarProperty Name="AktiviteSecenegiId" ColumnName="AktiviteSecenegiId" />
+                <ScalarProperty Name="AktiviteDurumuId" ColumnName="AktiviteDurumuId" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="Fatura" ColumnName="Fatura" />
+                <ScalarProperty Name="MuhasebelestiMi" ColumnName="MuhasebelestiMi" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Statusu" ColumnName="Statusu" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+                <ScalarProperty Name="OperasyondaMi" ColumnName="OperasyondaMi" />
+                <ScalarProperty Name="MailGittiMi" ColumnName="MailGittiMi" />
+                <ScalarProperty Name="Aciklama1" ColumnName="Aciklama1" />
+                <ScalarProperty Name="Aciklama2" ColumnName="Aciklama2" />
+                <ScalarProperty Name="Aciklama3" ColumnName="Aciklama3" />
+                <ScalarProperty Name="Aciklama4" ColumnName="Aciklama4" />
+                <ScalarProperty Name="Aciklama5" ColumnName="Aciklama5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActiviteAciklamalari">
+            <EntityTypeMapping TypeName="CRMModel.ActiviteAciklamalari">
+              <MappingFragment StoreEntitySet="ActiviteAciklamalari">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="AktiviteId" ColumnName="AktiviteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AktiviteDurumu">
+            <EntityTypeMapping TypeName="CRMModel.AktiviteDurumu">
+              <MappingFragment StoreEntitySet="AktiviteDurumu">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="Renk" ColumnName="Renk" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="AktiviteTipiId" ColumnName="AktiviteTipiId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AktiviteLoglari">
+            <EntityTypeMapping TypeName="CRMModel.AktiviteLoglari">
+              <MappingFragment StoreEntitySet="AktiviteLoglari">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="Statusu" ColumnName="Statusu" />
+                <ScalarProperty Name="AktiviteId" ColumnName="AktiviteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AktiviteSecenegi">
+            <EntityTypeMapping TypeName="CRMModel.AktiviteSecenegi">
+              <MappingFragment StoreEntitySet="AktiviteSecenegi">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="AktiviteTipiId" ColumnName="AktiviteTipiId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AktiviteTipi">
+            <EntityTypeMapping TypeName="CRMModel.AktiviteTipi">
+              <MappingFragment StoreEntitySet="AktiviteTipi">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AltKategoriler">
+            <EntityTypeMapping TypeName="CRMModel.AltKategoriler">
+              <MappingFragment StoreEntitySet="AltKategoriler">
+                <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="Sil" ColumnName="Sil" />
+                <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="AltKategoriAdi" ColumnName="AltKategoriAdi" />
+                <ScalarProperty Name="AltKategoriId" ColumnName="AltKategoriId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personel">
+            <EntityTypeMapping TypeName="CRMModel.Personel">
+              <MappingFragment StoreEntitySet="Personel">
+                <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="SiteTemasi" ColumnName="SiteTemasi" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="IseGirisTarihi" ColumnName="IseGirisTarihi" />
+                <ScalarProperty Name="SirketTelefonu" ColumnName="SirketTelefonu" />
+                <ScalarProperty Name="KisiselTelefonu" ColumnName="KisiselTelefonu" />
+                <ScalarProperty Name="TCKimlikNo" ColumnName="TCKimlikNo" />
+                <ScalarProperty Name="MedeniDurumu" ColumnName="MedeniDurumu" />
+                <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Gorev" ColumnName="Gorev" />
+                <ScalarProperty Name="Yetki" ColumnName="Yetki" />
+                <ScalarProperty Name="Sifresi" ColumnName="Sifresi" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="AdiSoyadi" ColumnName="AdiSoyadi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musteri">
+            <EntityTypeMapping TypeName="CRMModel.Musteri">
+              <MappingFragment StoreEntitySet="Musteri">
+                <ScalarProperty Name="PazarlamaDurumu" ColumnName="PazarlamaDurumu" />
+                <ScalarProperty Name="SonIslemTarihi" ColumnName="SonIslemTarihi" />
+                <ScalarProperty Name="Sektorler" ColumnName="Sektorler" />
+                <ScalarProperty Name="PcAdet" ColumnName="PcAdet" />
+                <ScalarProperty Name="Arama" ColumnName="Arama" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="MusteriAltGrubu" ColumnName="MusteriAltGrubu" />
+                <ScalarProperty Name="MusteriAnaGrubu" ColumnName="MusteriAnaGrubu" />
+                <ScalarProperty Name="MusteriGrubu" ColumnName="MusteriGrubu" />
+                <ScalarProperty Name="VergiNo" ColumnName="VergiNo" />
+                <ScalarProperty Name="VergiDairesi" ColumnName="VergiDairesi" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Semt" ColumnName="Semt" />
+                <ScalarProperty Name="Ilce" ColumnName="Ilce" />
+                <ScalarProperty Name="Il" ColumnName="Il" />
+                <ScalarProperty Name="Ulke" ColumnName="Ulke" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="CepTelefonu" ColumnName="CepTelefonu" />
+                <ScalarProperty Name="TelefonNo2" ColumnName="TelefonNo2" />
+                <ScalarProperty Name="TelefonNo1" ColumnName="TelefonNo1" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="EPosta" ColumnName="EPosta" />
+                <ScalarProperty Name="YetkiliKisi" ColumnName="YetkiliKisi" />
+                <ScalarProperty Name="SirketAdi" ColumnName="SirketAdi" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnvanterAccessPoint">
+            <EntityTypeMapping TypeName="CRMModel.EnvanterAccessPoint">
+              <MappingFragment StoreEntitySet="EnvanterAccessPoint">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="AccessPointArayuzId" ColumnName="AccessPointArayuzId" />
+                <ScalarProperty Name="AccessPointLocalIP" ColumnName="AccessPointLocalIP" />
+                <ScalarProperty Name="AccessPointSifresi" ColumnName="AccessPointSifresi" />
+                <ScalarProperty Name="AccessPointSSID" ColumnName="AccessPointSSID" />
+                <ScalarProperty Name="MarkaModeli" ColumnName="MarkaModeli" />
+                <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+                <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnvanterBilgisayarlar">
+            <EntityTypeMapping TypeName="CRMModel.EnvanterBilgisayarlar">
+              <MappingFragment StoreEntitySet="EnvanterBilgisayarlar">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Antivirus" ColumnName="Antivirus" />
+                <ScalarProperty Name="OfficeSurumu" ColumnName="OfficeSurumu" />
+                <ScalarProperty Name="KullandigiDigerYazilimlar3" ColumnName="KullandigiDigerYazilimlar3" />
+                <ScalarProperty Name="KullandigiDigerYazilimlar2" ColumnName="KullandigiDigerYazilimlar2" />
+                <ScalarProperty Name="KullandigiDigerYazilimlar1" ColumnName="KullandigiDigerYazilimlar1" />
+                <ScalarProperty Name="IsletimSistemi" ColumnName="IsletimSistemi" />
+                <ScalarProperty Name="EkranKarti" ColumnName="EkranKarti" />
+                <ScalarProperty Name="SistemDiski" ColumnName="SistemDiski" />
+                <ScalarProperty Name="Ram" ColumnName="Ram" />
+                <ScalarProperty Name="Cpu" ColumnName="Cpu" />
+                <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+                <ScalarProperty Name="KullaniciMailAdresi" ColumnName="KullaniciMailAdresi" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="UrununTuru" ColumnName="UrununTuru" />
+                <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnvanterServerler">
+            <EntityTypeMapping TypeName="CRMModel.EnvanterServerler">
+              <MappingFragment StoreEntitySet="EnvanterServerler">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="DomainServerIp" ColumnName="DomainServerIp" />
+                <ScalarProperty Name="DomainAdi" ColumnName="DomainAdi" />
+                <ScalarProperty Name="DomainServerSifresi" ColumnName="DomainServerSifresi" />
+                <ScalarProperty Name="DomainServerId" ColumnName="DomainServerId" />
+                <ScalarProperty Name="ServerIP" ColumnName="ServerIP" />
+                <ScalarProperty Name="FirmaIPPort" ColumnName="FirmaIPPort" />
+                <ScalarProperty Name="ServerSifresi" ColumnName="ServerSifresi" />
+                <ScalarProperty Name="ServerAdi" ColumnName="ServerAdi" />
+                <ScalarProperty Name="SistemDiski" ColumnName="SistemDiski" />
+                <ScalarProperty Name="Ram" ColumnName="Ram" />
+                <ScalarProperty Name="Cpu" ColumnName="Cpu" />
+                <ScalarProperty Name="ServerModeli" ColumnName="ServerModeli" />
+                <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+                <ScalarProperty Name="MusteriId" ColumnName="MusteriId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Restaurants">
+            <EntityTypeMapping TypeName="CRMModel.Restaurants">
+              <MappingFragment StoreEntitySet="Restaurants">
+                <ScalarProperty Name="distance" ColumnName="distance" />
+                <ScalarProperty Name="town" ColumnName="town" />
+                <ScalarProperty Name="logourl" ColumnName="logourl" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VW_Restaurants">
+            <EntityTypeMapping TypeName="CRMModel.VW_Restaurants">
+              <MappingFragment StoreEntitySet="VW_Restaurants">
+                <ScalarProperty Name="distance" ColumnName="distance" />
+                <ScalarProperty Name="town" ColumnName="town" />
+                <ScalarProperty Name="logourl" ColumnName="logourl" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Restorant_users">
+            <EntityTypeMapping TypeName="CRMModel.Restorant_users">
+              <MappingFragment StoreEntitySet="Restorant_users">
+                <ScalarProperty Name="wrongLoginCount" ColumnName="wrongLoginCount" />
+                <ScalarProperty Name="last_balance" ColumnName="last_balance" />
+                <ScalarProperty Name="lockDate" ColumnName="lockDate" />
+                <ScalarProperty Name="isLocked" ColumnName="isLocked" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="customer_surname" ColumnName="customer_surname" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="smscode" ColumnName="smscode" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="restorant_activity">
+            <EntityTypeMapping TypeName="CRMModel.restorant_activity">
+              <MappingFragment StoreEntitySet="restorant_activity">
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="pos_or_mobile" ColumnName="pos_or_mobile" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="process_type" ColumnName="process_type" />
+                <ScalarProperty Name="process_date" ColumnName="process_date" />
+                <ScalarProperty Name="restaurant_name" ColumnName="restaurant_name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
